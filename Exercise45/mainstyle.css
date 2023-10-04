@@ -5,17 +5,26 @@ header{
     border-bottom: 2px solid orange;
     text-align: right;
 }
-    #online{
-        width:fit-content;
-        color: white;
-        background-color: rgb(162, 91, 91);
-    }
+#online{
+    background-color: rgb(238, 138, 16);
+    color:white;
+    width:fit-content;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 620;
+}
+#scrapbook{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:25pt
+}
+
 nav {
     float: left;
     width: 185px;
     height:100%;
     padding-left: 1px;
     background-image: url("ex45/images/back.jpg");
+    overflow:auto;
 }
 nav ul{
     margin-top:0
@@ -34,7 +43,7 @@ section {
 }
 #article{
     float:right;
-    margin-left: 5px;
+    margin-left: 6px;
     border-left: 4px solid orange;
     border-top: 4px solid orange;
     border-right: 4px solid rgb(93, 61, 1);
