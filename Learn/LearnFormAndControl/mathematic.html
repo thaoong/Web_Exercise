@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Math</title>
+        <script type="text/javascript">
+            function cong2so()
+            {
+                //Lấy giá trị hệ số a:
+                a=document.getElementById("hsa").value
+                b=document.getElementById("hsb").value
+                c=eval(a)+eval(b)
+                //đưa lên ô kết quả
+                tdketqua=document.getElementById("tdketqua")
+                //tdketqua.innerHTML=c
+                tdketqua.innerHTML="<font color='red'>"+c+"</font>"
+            }
+            function tru2so()
+            {
+                c=eval(a)-eval(b)
+                //đưa lên ô kết quả
+                tdketqua=document.getElementById("tdketqua")
+                //tdketqua.innerHTML=c
+                tdketqua.innerHTML="<font color='red'>"+c+"</font>"
+            }
+            function openWebsite()
+            {
+                window.open("https://is.uel.edu.vn", "_blank")
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <table border="1">
+                <tr>
+                    <td>Hệ số a:</td>
+                    <td>
+                        <input type="number" id="hsa" name="hsa">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hệ số b:</td>
+                    <td>
+                        <input type="number" id="hsb" name="hsb">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Kết quả
+                    </td>
+                    <td id="tdketqua">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="button" value="+ 2 số" onclick="cong2so()">
+                        <input type="button" value="- 2 số" onclick="tru2so(hsa.value, hsb.value)">
+                        <input type="reset" value="is.uel.edu.vn" onclick="openWebsite()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
