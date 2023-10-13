@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Quandratic equation</title>
+        <script type="text/javascript">
+            function giaiPtb2()
+            {
+                a=eval(myform.hsa.value)
+                b=eval(myform.hsb.value)
+                c=eval(myform.hsc.value)
+                delta = b*b - 4*a*c
+                result=document.getElementById("tdresult")
+                if (delta < 0)
+                {
+                result.innerHTML="Phương trình vô nghiệm"
+                }
+                else if (delta==0)
+                {
+                x = -b/2*a;
+                result.innerHTML="x=" +x
+                }
+                else
+                {
+                x1 = (-b + (Math.sqrt(delta))/2*a)
+                x2 = (-b - (Math.sqrt(delta))/2*a)
+                result.innerHTML="x1=" +x1+ "; x2="+x2
+                }
+            }
+            function ClearResult()
+            {
+                result=document.getElementById("tdresult")
+                result.innerHTML=""
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="2" width="300">
+                <tr>
+                    <td colspan="2" style="background-color: aquamarine; text-align: center;">
+                        The quadratic equation
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><label for="hsa">a:</label></td>
+                    <td><input type="number" id="hsa" name="hsa"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><label for="hsb">b:</label></td>
+                    <td><input type="number" id="hsb" name="hsb"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><label for="hsc">c:</label></td>
+                    <td><input type="number" id="hsc" name="hsc"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">Result:</td>
+                    <td id="tdresult"
+                        style="color:red"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="button" value="Find Solution"
+                            onclick="giaiPtb2()">
+                        <input type="reset" value="Clear" onclick="ClearResult()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

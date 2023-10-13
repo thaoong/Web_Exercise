@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Switch Demo C2</title>
+        <script src="SwitchDemo.js">
+        </script>
+    </head>
+    <body>
+        <div 
+        id="mydiv" 
+        style="background-color: red; width: 100; height: 100;">
+        </div>
+        <p>
+            <input name="color" id="yellow" type="radio" value="0" 
+                onchange="changeColor(this.value)">
+            <label for="yellow">Yellow</label>
+            <input name="color" id="blue" type="radio" value="1"
+                onchange="changeColor(this.value)">
+            <label for="blue">Blue</label>
+            <input name="color" id="pink" type="radio" value="2"
+                onchange="changeColor(this.value)">
+            <label for="pink">Pink</label>        
+        </p>
+    </body>
+</html>

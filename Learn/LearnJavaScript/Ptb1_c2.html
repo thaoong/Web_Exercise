@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Giải PTB1 C2</title>
+        <script src="giaiptb1.js"></script>
+        <script type="text/javascript">
+            function callgiaiPtb1()
+            {
+                a=eval(myform.hsa.value)
+                b=eval(myform.hsb.value)
+                ketqua=giaiPtb1(a,b)
+                document.getElementById("tdresult").innerHTML=ketqua
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table>
+                <tr>
+                    <td colspan="2">PTB1</td>
+                </tr>
+                <tr>
+                    <td><label for="hsa">Hệ số a:</label></td>
+                    <td><input type="number" id="hsa" name="hsa"></td>
+                </tr>
+                <tr>
+                    <td><label for="hsb">Hệ số b:</label></td>
+                    <td><input type="number" id="hsb" name="hsb"></td>
+                </tr>
+                <tr>
+                    <td>Kết quả</td>
+                    <td id="tdresult"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="button" value="Giải"
+                            onclick="callgiaiPtb1()">
+                        <input type="reset" value="Pt mới">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

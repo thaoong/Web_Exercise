@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+            table, td{
+                border:1px;
+                border-style: solid;
+                table-layout: fixed;
+            }
+            td{
+                width: 30px;
+                height: 30px;
+                text-align: center;
+            }
+            td:hover{
+                background-color: pink;
+                cursor: pointer;
+            }
+        </style>
+        <script type="text/javascript">
+            function drawTable(n)
+            {
+                mydiv=document.getElementById("mydiv")
+                table="<table cellspacing='0'; cellpadding='0'; width='1000px' height='0'>"
+                    for(i=0;i<n;i++)
+                    {
+                        tr="<tr>"
+                        for(j=0;j<n;j++)
+                        {
+                            tr+="<td onclick='processTick(this)'></td>"
+                        }
+                        tr+="</td>"
+                        table+=tr
+                    }
+                table+="</table>"
+                mydiv.innerHTML=table
+            }
+            function processTick(td)
+            {
+                td.innerText='x'
+            }
+            myGlobalTick='o'
+            function processTick(td)
+            {
+                if(td.innerText.trim()!="")//already ticked
+                    return
+                if(myGlobalTick=='o')
+                    myGlobalTick='x'
+                else
+                    myGlobalTick='o'
+                td.innerText=myGlobalTick
+            }
+        </script>
+    </head>
+    <body>
+        <div id="mydiv"
+            style="width: 1000px; height: 1000px;">
+
+        </div>
+        <script type="text/javascript">
+            drawTable(100)
+        </script>
+    </body>
+</html>

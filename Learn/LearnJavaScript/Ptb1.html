@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Giải PTB1</title>
+        <script type="text/javascript">
+            function giaiPtb1()
+            {
+                //alert("yeah")
+                //alert(myform.hsa)
+                //alert(myform.hsa.value)
+                a=eval(myform.hsa.value)
+                b=eval(myform.hsb.value)
+                ketqua=document.getElementById("tdresult")
+                if(a==0 && b==0)
+                {
+                    ketqua.innerHTML="Tùm lum nghiệm"
+                }
+                else if(a==0 && b!=0)
+                {
+                    ketqua.innerHTML="Vô nghiệm"
+                }
+                else
+                {
+                    ketqua.innerHTML=-b*1.0/a
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <table border="2" width="300">
+                <tr>
+                    <td colspan="2" style="background-color: aquamarine; text-align: center;">
+                        Giải phương trình bậc 1
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><label for="hsa">a:</label></td>
+                    <td><input type="number" id="hsa" name="hsa"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><label for="hsb">b:</label></td>
+                    <td><input type="number" id="hsb" name="hsb"></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">Result:</td>
+                    <td id="tdresult"></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="button" value="Find Solution"
+                            onclick="giaiPtb1()">
+                        <input type="reset" value="Clear">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

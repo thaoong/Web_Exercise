@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style type="text/css">
+            table, td{
+                border: 1px;
+                border-style: solid;
+                table-layout: fixed;
+            }
+            td{
+                width: 30px;
+                height: 30px;
+            }
+        </style>
+        <script type="text/javascript">
+            function drawTable()
+            {
+                mydiv=document.getElementById("mydiv")
+                table="<table cellspacing='0' cellpadding='0' width='1000px' height='1000px'>"
+                for (i=0;i<n;i++)
+                {
+                    tr="<tr>"
+                    for (j=0;j<n;j++)
+                    {
+                        tr+="<td></td>"
+                    }
+                    tr+="<tr>"
+                    table+=tr
+                }
+                table+="</table>"
+                mydiv.innerHTML=table
+            }
+        </script>
+    </head>
+    <body>
+        <div id="mydiv" 
+            style="width: 1000px; height: 1000px;">
+            
+        </div>
+        <script type="text/javascript">
+            drawTable(100)
+        </script>
+    </body>
+</html>
