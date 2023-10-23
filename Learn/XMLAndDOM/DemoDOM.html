@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function processChangaAttribute()
+            {
+                listOfp=document.getElementsByTagName("p")
+                for(i=0; i<listOfp.length; i++)
+                {
+                    p=listOfp[i]
+                    p.setAttribute("title", "This is tooltip" +i)
+                    p.setAttribute("style", "font-size: 25px; color:red")
+                }
+                plast=listOfp[listOfp.length-1]
+                alert(plast.getAttribute("myVar"))
+            }
+        </script>
+    </head>
+    <body>
+        <p style="font-size: 15pt;">Obama!</p>
+        <p style="font-size: 15pt;">Putin!</p>
+        <p style="font-size: 15pt;">Kim Jong Un!</p>
+        <p myVar="I am Teo!">Tèo Tèo</p>
+        <input value="Change attribute" type="button"
+            onclick="processChangaAttribute()">
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            function changeBackgroundOver(obj)
+            {
+                obj.style.backgroundColor='blue'
+            }
+            function changeBackgroundOut(obj)
+            {
+                obj.style.backgroundColor='yellow'
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product Name</th>
+                    <th>Unit price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onmouseover="changeBackgroundOver(this)"
+                    onmouseout="changeBackgroundOut(this)"
+                    >
+                    <td>P-1</td>
+                    <td>Coca Cola</td>
+                    <td>15$</td>
+                </tr>
+                <tr>
+                    <td>P-2</td>
+                    <td>Pepsi</td>
+                    <td>10$</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

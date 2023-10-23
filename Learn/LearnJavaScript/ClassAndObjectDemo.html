@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            var student={
+                StudentID:"K2141123",
+                FirstName:"Teo",
+                MiddleName:"Van",
+                LastName:"Nguyen",
+                Birthday:"2003/1/1",
+                getFullName:function()
+                {
+                    s=this.LastName.concat(" ")
+                    .concat(this.MiddleName).concat(" ")
+                    .concat(this.FirstName)
+                    return s
+                },
+                getAge:function()
+                {
+                    //step1: convert this.Birthday to Date object
+                    dateOfBirthday=Date.parse(this.Birthday)
+                    //step2: get diiferent between now and dateOfBirthday
+                    //subtract -> return milliseconds
+                    diffMil=Date.now()-dateOfBirthday
+                    //step 3: convert diffMil to Date
+                    dateOfDiffMil=new Date(diffMil)
+                    //Date return 1970 with miilisecond
+                    //cuz Y2K problem
+                    age=Math.abs(dateOfDiffMil.getUTCFullYear()-1970)
+                    return age
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>StudentID:</td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(student.StudentID)
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(student.FirstName)
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>Middle Name:</td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(student.MiddleName)
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(student.LastName)
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>Birthday:</td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(student.Birthday)
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>Full name:</td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(student.getFullName())
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(student.getAge())
+                    </script>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

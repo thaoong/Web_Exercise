@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            s="K21411123;Trần Thị Lung Linh;linhlinh@st.uel.edu.vn"
+            arr=s.split(";")
+            studentID=arr[0]
+            studentName=arr[1]
+            studentEmail=arr[2]
+        </script>
+        <script type="text/javascript">
+            function showStudentByInfo()
+            {
+                document.getElementById("tdname").innerHTML=studentName
+                document.getElementById("tdemail").innerHTML=studentEmail
+            } 
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>Student ID:</td>
+                <td>
+                    <script type="text/javascript">
+                        document.writeln(studentID)
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>Student Name:</td>
+                <td id="tdname">      
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td id="tdemail"></td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            showStudentByInfo()
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            datasets= new Array(3)
+            datasets[0]="K21411123;Trần Đại Bàng;bangbang@st.uel.edu.vn"
+            datasets[1]="K21411124;Hồ Đồ;hodo@st.uel.edu.vn"
+            datasets[2]="K21411124;Nguyễn Cái Bang;caibang@st.uel.edu.vn"
+        </script>
+        <script type="text/javascript">
+            function drawStudentData()
+            {
+                tableBody=document.getElementById("tableBody")
+                for (i=0; i<datasets.length; i++)
+                {
+                    item=datasets[i]
+                    arr=item.split(";")
+                    tr="<tr>"
+                    tr+="<td>"+arr[0]+"</td>"
+                    tr+="<td>"+arr[1]+"</td>"
+                    tr+="<td>"+arr[2]+"</td>"
+                    tr+="<tr>"
+                    tableBody.innerHTML+=tr
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <table border="1">
+            <thead>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Student Email</th>
+            </thead>
+            <tbody id="tableBody">
+                
+            </tbody>
+        </table>
+        <script type="text/javascript">
+            drawStudentData()
+        </script>
+    </body>
+</html>
