@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Exercise 73</title>
+        <script type="text/javascript">
+            var products=[
+                    {
+                    code: "sp1",
+                    name: "Cocacola",
+                    price: 15000
+                    },
+                    {
+                    code: "sp2",
+                    name: "Pepsi",
+                    price: 25000
+                    },
+                    {
+                    code: "sp3",
+                    name: "Sting",
+                    price: 17000
+                    },
+                    ]
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr style="background-color: green; color: white;">
+                <th>Product Code</th>
+                <th>Product Name</th>
+                <th>UnitPrice</th>
+            </tr>
+            <tbody id="tblbody">
+
+            </tbody>
+        </table>
+    </body>
+    <script>
+        tblbody=document.getElementById("tblbody")
+        for (i=0;i<=products.length;i++)
+        {
+            product=products[i]
+            //crete tr
+            tr=document.createElement("tr")
+            tdcode=document.createElement("td")
+            tdcode.style.color="red"
+            tdcode.innerHTML=product.code
+            tr.appendChild(tdcode)
+
+            tdname=document.createElement("td")
+            tdname.innerHTML=product.name
+            tdname.style.color="red"
+            tr.appendChild(tdname)
+
+            tdprice=document.createElement("td")
+            tdprice.innerHTML=product.price
+            tr.appendChild(tdprice)
+            tblbody.appendChild(tr)
+        }
+    </script>
+</html>

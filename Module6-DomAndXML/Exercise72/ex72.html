@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Exercise 72</title>
+        <script type="text/javascript">
+            products=[{
+                "ProductID": "p123",
+                "ProductName": "DELL Inspiron 14NR",
+                "Quantity": 100,
+                "UnitPrice": 150000
+                },
+                {
+                "ProductID": "p456",
+                "ProductName": "HP Inspiron 113",
+                "Quantity": 130,
+                "UnitPrice": 140000
+                }
+                ]
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <th colspan="4" align="center"
+                    style="background-color: yellow;">
+                    List of Product
+                </th>
+            </tr>
+            <tr style="background-color: green; color: white;">
+                <th>ProductID</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>UnitPrice</th>
+            </tr>
+            <tbody id="tblbody">
+
+            </tbody>
+        </table>
+    </body>
+    <script>
+        tblbody=document.getElementById("tblbody")
+        for (i=0;i<=products.length;i++)
+        {
+            product=products[i]
+            //crete tr
+            tr=document.createElement("tr")
+            tdid=document.createElement("td")
+            tdid.style.color="red"
+            tdid.innerHTML=product.ProductID
+            tr.appendChild(tdid)
+
+            tdname=document.createElement("td")
+            tdname.innerHTML=product.ProductName
+            tdname.style.color="red"
+            tr.appendChild(tdname)
+
+            tdquantity=document.createElement("td")
+            tdquantity.innerHTML=product.Quantity
+            tr.appendChild(tdquantity)
+
+            tdprice=document.createElement("td")
+            tdprice.innerHTML=product.UnitPrice
+            tr.appendChild(tdprice)
+            tblbody.appendChild(tr)
+        }
+    </script>
+</html>

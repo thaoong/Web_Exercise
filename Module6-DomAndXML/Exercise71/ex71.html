@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Exercise71</title>
+        <script type="text/javascript">
+            var user = {
+                    "id": "100005823642721",
+                    "first_name": "Duy Thanh",
+                    "gender": "male",
+                    "last_name": "Trần",
+                    "link": "https://www.facebook.com/duythanhcse",
+                    "locale": "en_US",
+                    "birthday": "20/12/1961",
+                    "name": "Duy Thanh Trần",
+                    "username": "duythanhcse"
+                    } 
+            //function setdata
+            function setDataHtml(id,data)
+            {
+                document.getElementById(id).innerHTML=data
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td >User ID:</td>
+                <td id="tdid"></td>
+            </tr>
+            <tr>
+                <td >First Name:</td>
+                <td id="tdfirstname"></td>
+            </tr><tr>
+                <td >Gender:</td>
+                <td id="tdgender"></td>
+            </tr><tr>
+                <td >Last name:</td>
+                <td id="tdlastname"></td>
+            </tr><tr>
+                <td >Link:</td>
+                <td id="tdlink"></td>
+            </tr><tr>
+                <td >Locale:</td>
+                <td id="tdlocale"></td>
+            </tr><tr>
+                <td >Birthday:</td>
+                <td id="tdbirthday"></td>
+            </tr><tr>
+                <td >Name:</td>
+                <td id="tdname"></td>
+            </tr><tr>
+                <td >User Name:</td>
+                <td id="tdusername"></td>
+            </tr>
+        </table>
+        <script>
+            setDataHtml("tdid",user.id)
+            setDataHtml("tdfirstname",user.first_name)
+            setDataHtml("tdgender",user.gender)
+            setDataHtml("tdlastname",user.last_name)
+            setDataHtml("tdlink",user.link)
+            setDataHtml("tdlocale",user.locale)
+            setDataHtml("tdbirthday",user.birthday)
+            setDataHtml("tdname",user.name)
+            setDataHtml("tdusername",user.username)
+        </script>
+    </body>
+</html>

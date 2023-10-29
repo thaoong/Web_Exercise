@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Exercise 68 2</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        
+            th, td {
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The XMLHttpRequest Object</h1>
+        <input type="button" onclick="loadData()"  value="Get my CD collection">
+        <p></p>
+        <table id="mytable">
+
+        </table>
+        <script>
+            function loadData()
+            {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "ex68/cd_catalog.xml", true);
+                xhr.send();
+                xhr.onreadystatechange=function()
+                {
+                    if(xhr.readyState==4 && xhr.status==200)
+                    {
+                        //use DOM here
+                        var xmlDoc = xhr.responseXML;
+                        var table=document.getElementById("mytable")
+                        var x = xmlDoc.getElementsByTagName("CD");
+                        tr_head=document.createElement("tr")
+                        thartist=document.createElement("th")
+                        thartist.innerText="Artist"
+                        thtitle=document.createElement("th")
+                        thtitle.innerText="Title"
+                        tr_head.appendChild(thartist)
+                        tr_head.appendChild(thtitle)
+                        table.appendChild(tr_head)
+
+                        for (i=0; i<x.length; i++)
+                        {
+                            tr=document.createElement("tr")
+                            tdartist=document.createElement("td")
+                            artist=xmlDoc.getElementsByTagName("ARTIST")[i].childNodes[0].nodeValue
+                            tdartist.innerHTML=artist
+                            tdtitle=document.createElement("td")
+                            title=xmlDoc.getElementsByTagName("TITLE")[i].childNodes[0].nodeValue
+                            tdtitle.innerHTML=title
+                            tr.appendChild(tdartist)
+                            tr.appendChild(tdtitle)
+                            table.appendChild(tr)
+                        }
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
