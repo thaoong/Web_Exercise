@@ -4,12 +4,8 @@
         <style>
             table{
                 border-collapse: collapse;
-            }
-            #header{
-                cursor: pointer;
-            }
-            td{
-                padding-left: 5px;
+                }
+            #header, #mytable td{
                 cursor: pointer;
             }
         </style>
@@ -34,14 +30,10 @@
             txt+="</student></students>"
         </script>
         <script type="text/javascript">
-
-            //Onmouse over function
             function changeBackgroundOver(obj)
             {
                 obj.style.backgroundColor='yellow'
             }
-
-            //Onmouse out function
             function changeBackgroundOut(obj)
             {
                 obj.style.backgroundColor='white'
@@ -75,6 +67,7 @@
                         {
                             if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())
                             {
+                                // If so, mark as a switch and break the loop:
                                 shouldSwitch = true;
                                 break;
                             }
@@ -97,7 +90,6 @@
                 }
             }
 
-            //Show detail page function
             function showDetails(obj) 
             {
                 // Lấy thông tin từ hàng đang được click
@@ -114,6 +106,14 @@
 
                 // Mở trang Chi tiết trong một cửa sổ mới
                 window.open(detailURL);
+                // Hiển thị div chứa table lưu thông tin chi tiết
+                //var detailPage = document.getElementById("detailPage");
+                //detailPage.style.display="block"
+                // Chèn thông tin trong bảng chi tiết
+                //document.getElementById("tdid").innerHTML=id
+                //document.getElementById("tdname").innerHTML=name
+                //document.getElementById("tdbirthday").innerHTML=birthday
+                //document.getElementById("tdgender").innerHTML=gender
             }
         </script>
     </head>
@@ -133,9 +133,28 @@
             </tr>
             <tbody id="tblbody"></tbody>
         </table>
-
+        <div id="detailPage" style="display: none;">
+            <table id="detailTable" border="1px" width="250">
+                <tr>
+                    <th bgColor="pink" colspan="2">Student Information</th>
+                </tr>
+                <tr>
+                    <td>Student ID:</td>
+                    <td id="tdid"></td>
+                </tr>
+                <tr>
+                    <td>Student Name:</td>
+                    <td id="tdname"></td>
+                </tr><tr>
+                    <td>Birthday:</td>
+                    <td id="tdbirthday"></td>
+                </tr><tr>
+                    <td>Gender:</td>
+                    <td id="tdgender"></td>
+                </tr>
+            </table>
+        </div>
         <script type="text/javascript">
-            //load data
             var parser=new DOMParser()
             var xmlDoc=parser.parseFromString(txt,"text/xml")
             tblbody=document.getElementById("tblbody")

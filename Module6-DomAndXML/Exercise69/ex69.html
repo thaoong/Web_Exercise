@@ -2,92 +2,100 @@
 <html>
 <head>
     <title>Exercise 69</title>
-</head>
-<body>
-    <table id="employeeTable" border="1">
-        <thead>
-            <tr>
-                <td>
-                    <label for="titles">Title:</label>
-                </td>
-                <td colspan="2">                    
-                    <select id="titles">
-                        <option value="">All Titles</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>Employee ID</th>
-                <th>Employee Name</th>
-                <th>Phone</th>
-            </tr>
-        </thead>     
-        <tbody id="employeeData">
-        </tbody>
-    </table>
-    <script>
-        function loadData()
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 300px;
+        }
+        th{
+            background-color: GREEN;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "employees.xml", true);
+        xhr.send();
+        xhr.onreadystatechange=function()
             {
-                var xhr = new XMLHttpRequest();
-                xhr.open("GET", "employees.xml", true);
-                xhr.send();
-                xhr.onreadystatechange=function()
+                if(xhr.readyState==4 && xhr.status==200)
                 {
-                    if(xhr.readyState==4 && xhr.status==200)
-                    {
-                        var xmlDoc = xhr.responseXML;   
-                        loadTitles();
-                    }
-                };
-            }
-        function loadTitles() {
-            var xmlDoc = xhr.responseXML;
-            var titlesDropdown = document.getElementById("titles");
-            var employees = xmlDoc.getElementsByTagName("employee");
-            var titles = [];
-
-            for (var i = 0; i < employees.length; i++) {
-                var title = employees[i].getAttribute("title");
-
-                if (titles.indexOf(title) == -1) {
-                    titles.push(title);
-
-                    var option = document.createElement("option");
-                    option.value = title;
-                    option.text = title;
-                    titlesDropdown.add(option);
+                    var xmlDoc=xhr.responseXML;
+                    loadTitles(xmlDoc)
                 }
             }
-
-            titlesDropdown.addEventListener("change", filterEmployees);
-            filterEmployees();
+        function loadTitles(xmlDoc)
+        {
+            var titlesDropdown = document.getElementById("titles");
+            var employees = xmlDoc.getElementsByTagName("employee");
+            var uniqueTitle=new Set()
+            for (i=0; i<employees.length; i++)
+            {
+                var title = employees[i].getAttribute("title");
+                uniqueTitle.add(title)
+            }
+            uniqueTitleArray=Array.from(uniqueTitle)
+            for (i=0; i<uniqueTitleArray.length; i++)
+            {
+                var option=document.createElement("option")
+                option.value=uniqueTitleArray[i]
+                option.text=uniqueTitleArray[i]
+                titlesDropdown.add(option)
+            }
+            titlesDropdown.addEventListener("change", displayEmployee)
+            //display data of current selected
+            displayEmployee()
         }
-
-        function filterEmployees() {
+        function displayEmployee()
+        {
             var selectedTitle = document.getElementById("titles").value;
             var xmlDoc = xhr.responseXML;
             var employees = xmlDoc.getElementsByTagName("employee");
-            var table = document.getElementById("employeeTable");
-            var tableBody = document.getElementById("employeeData");
+            var tableBody = document.getElementById("tableBody");
+            //delete current value
             tableBody.innerHTML = "";
-
             for (var i = 0; i < employees.length; i++) {
                 var title = employees[i].getAttribute("title");
-                if (selectedTitle == "" || title == selectedTitle) {
+                if (title == selectedTitle) {
                     var id = employees[i].getAttribute("id");
-                    var name = employees[i].getElementsByTagName("name")[0].textContent;
-                    var phone = employees[i].getElementsByTagName("phone")[0].textContent;
-
-                    var row = tableBody.insertRow(-1);
-                    var cell1 = row.insertCell(0);
-                    var cell2 = row.insertCell(1);
-                    var cell3 = row.insertCell(2);
-                    cell1.innerHTML = id;
-                    cell2.innerHTML = name;
-                    cell3.innerHTML = phone;
+                    var name = employees[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                    var phone = employees[i].getElementsByTagName("phone")[0].childNodes[0].nodeValue;
+                    tr=document.createElement("tr")
+                    tdid=document.createElement("td")
+                    tdid.innerHTML=id
+                    tdname=document.createElement("td")
+                    tdname.innerHTML=name
+                    tdphone=document.createElement("td")
+                    tdphone.innerHTML=phone
+                    tr.appendChild(tdid)
+                    tr.appendChild(tdname)
+                    tr.appendChild(tdphone)
+                    tableBody.appendChild(tr)
                 }
-            }
+            }   
         }
+    </script>
+</head>
+<body>
+    <table id="mytable" border="1">
+        <tr>
+            <td>
+                <label for="titles">Title:</label>
+            </td>
+            <td colspan="2">                    
+                <select id="titles">
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Employee ID</th>
+            <th>Employee Name</th>
+            <th>Phone</th>
+        </tr>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+    <script>
     </script>
 </body>
 </html>
