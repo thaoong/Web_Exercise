@@ -13,6 +13,12 @@
             padding-left:5px;
         }
     </style>
+    <script type="text/javascript">
+        function openMainPage() 
+        {
+            window.open("ex67.html", "_self");
+        }
+    </script>
     
 </head>
 <body>
@@ -37,6 +43,10 @@
             <td id="tdgender"></td>
         </tr>
     </table>
+    <p>
+        <input type="button" value="Back to main page"
+            onclick="openMainPage()">
+    </p>
     <script>
         var urlParams = new URLSearchParams(window.location.search);
         var id = urlParams.get('id');

@@ -75,7 +75,7 @@
                         {
                             if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())
                             {
-                                shouldSwitch = true;
+                                shlouldSwitch = true;
                                 break;
                             }
                         }
@@ -104,16 +104,13 @@
                 var id = obj.cells[0].innerHTML;
                 var name = obj.cells[1].innerHTML;
                 var birthday = obj.cells[2].innerHTML;
-                var gender = obj.cells[3].innerHTML;
-
-                // Xây dựng URL với các tham số chi tiết
-                var detailURL = 'detail.html?id=' + encodeURIComponent(id) +
-                                '&name=' + encodeURIComponent(name) +
-                                '&birthday=' + encodeURIComponent(birthday) +
-                                '&gender=' + encodeURIComponent(gender);
-
+                var gender = obj.cells[3].innerHTML;             
                 // Mở trang Chi tiết trong một cửa sổ mới
-                window.open(detailURL);
+                window.location.href = "detail.html?id=" + id +
+                                        '&name=' + name +
+                                        '&birthday=' + birthday +
+                                        '&gender=' + gender;
+
             }
         </script>
     </head>
