@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Exercise 74</title>
+        <style type="text/css">
+            table{
+                border-collapse: collapse ;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <tr bgColor="yellow">
+                <td rowspan="2">Mã sinh viên</td>
+                <td rowspan="2">Tên sinh viên</td>
+                <td colspan="3">Điểm thành phần</td>
+                <td rowspan="2">Điểm trung bình</td>
+                <td rowspan="2">Kết quả</td>
+            </tr>
+            <tr bgColor="yellow">
+                <td>Toán</td>
+                <td>Lý</td>
+                <td>Hóa</td>
+            </tr>
+            <tbody id="tableBody"></tbody>
+        </table>
+        <script>
+            // Use AJAX to fetch the JSON data
+            var xhr= new XMLHttpRequest()
+            xhr.onreadystatechange=function()
+                {
+                    if(xhr.readyState==4 && xhr.status==200)
+                    {
+                        var students=JSON.parse(xhr.responseText)
+                        loadData(students)
+                    }
+                }
+        xhr.open("GET", "ex74/database-students.json", true);
+        xhr.send();
+        
+        //Load data function
+        function loadData(students)
+        {
+            var tableBody=document.getElementById("tableBody")
+            for (i=0; i<students.length; i++)
+            {
+                var student=students[i]
+                var tr=document.createElement("tr")
+                var tdma=document.createElement("td")
+                var tdten=document.createElement("td")
+                var tddiemtoan=document.createElement("td")
+                var tddiemly=document.createElement("td")
+                var tddiemhoa=document.createElement("td")
+                var tddiemTB=document.createElement("td")
+                var tdketqua=document.createElement("td")
+                //lấy mã sinh viên
+                tdma.innerText=student.Ma
+                //lấy tên
+                tdten.innerText=student.Ten
+                //lấy điểm toán
+                tddiemtoan.innerText=student.MonHocs[0].Diem
+                // lấy điểm lý
+                tddiemly.innerText=student.MonHocs[1].Diem
+                //lấy điểm hóa
+                tddiemhoa.innerText=student.MonHocs[2].Diem
+                //tính điểm trung binh
+                var diemTB=(student.MonHocs[0].Diem
+                            +student.MonHocs[1].Diem
+                            +student.MonHocs[2].Diem)/3
+                tddiemTB.innerText=diemTB.toFixed(2)
+                // tính kết quả
+                var ketqua=diemTB >= 5 ? "Đậu" : "Rớt"
+                tdketqua.innerText=ketqua
+
+                tr.appendChild(tdma)
+                tr.appendChild(tdten)
+                tr.appendChild(tddiemtoan)
+                tr.appendChild(tddiemly)
+                tr.appendChild(tddiemhoa)
+                tr.appendChild(tddiemTB)
+                tr.appendChild(tdketqua)
+                tableBody.appendChild(tr)
+            }
+        }
+        </script>
+    </body>
+</html>

@@ -1,24 +1,78 @@
 <html>
-    <head>
-        <title>Color Picker</title>
-        <style type="text/css">
-            
-        </style>
-    </head>
-    <body>
-        <h1 align="center">A Simple Color Picker</h1>
-        <table align="center" width="600" border="1px">
-            <tr>
-                <td>
+<head>
+    <title>Color Picker</title>
+    <style type="text/css">
+        input {
+            width: 30px;
+        }
+
+        #apply {
+            width: fit-content;
+            margin-top: 5px;
+            margin-left: 90px;
+        }
+
+        #reload {
+            width: fit-content;
+            margin-left: 8px;
+        }
+
+        td{
+            padding: 5px;
+            color:rgb(120, 6, 6)
+        }
+    </style>
+    <script type="text/javascript">
+        function changeColor() {
+            tdChange = document.getElementById("tdchange");
+
+            red_bg = document.getElementById("red_bg").value;
+            green_bg = document.getElementById("green_bg").value;
+            blue_bg = document.getElementById("blue_bg").value;
+            red_text = document.getElementById("red_text").value;
+            green_text = document.getElementById("green_text").value;
+            blue_text = document.getElementById("blue_text").value;
+            // Change text color
+            tdChange.style.color = "rgb(" + red_text + ", " + green_text + ", " + blue_text + ")";
+            // Change background color
+            tdChange.style.backgroundColor = "rgb(" + red_bg + ", " + green_bg + ", " + blue_bg + ")";
+        }
+    </script>
+</head>
+<body>
+    <h1 align="center">A Simple Color Picker</h1>
+    <table align="center" width="600" border="1px">
+        <tr>
+            <td width="300">
+                <form>
                     Background (enter values from '00' to 'FF') <br/>
                     <label for="red_bg">RED:</label>
                     <input type="text" id="red_bg" name="red_bg">
                     <label for="green_bg">GREEN:</label>
                     <input type="text" id="green_bg" name="green_bg">
                     <label for="blue_bg">BLUE:</label>
-                    <input type="text" id="blue_bg" name="blue_bg">
-                </td>
-            </tr>
-        </table>
-    </body>
+                    <input type="text" id="blue_bg" name="blue_bg"> <br/>
+    
+                    Text (enter values from '00' to 'FF') <br/>
+                    <label for="red_text">RED:</label>
+                    <input type="text" id="red_text" name="red_text">
+                    <label for="green_text">GREEN:</label>
+                    <input type="text" id="green_text" name="green_text">
+                    <label for="blue_text">BLUE:</label>
+                    <input type="text" id="blue_text" name="blue_text"> <br/>
+    
+                    <input type="button" id="apply" name="apply" value="Apply" onclick="changeColor()">
+                    <input type="reset" id="reload" name="reload" value="Reload">
+                </form>
+
+            </td>
+            <td rowspan="6" id="tdchange">
+                <b>HAMLET</b>
+                <p id="test">Speak the speech, I pray you, as I pronounced it to you, trippingly on the tongue
+                :but if you mouth it, as many of your players do, I had as lief the town-crier spoke my lines.
+                </p>
+            </td>
+        </tr>
+    </table>
+</body>
 </html>

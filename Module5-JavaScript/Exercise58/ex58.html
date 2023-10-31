@@ -1,0 +1,198 @@
+<html>
+    <head>
+        <title>Noenatal Feeding Study</title>
+        <style type="text/css">
+            body{
+                background-color: rgb(141, 141, 205);
+                color: white;
+            }
+            .header{
+                text-align: center;
+                font-family: arial;
+            }
+            #activity, #pulse, #grimace,
+            #appearance, #respiration{
+                width: 40px;
+            }
+        </style>
+        <script>
+            // Function to format the date as "d/m/yyyy"
+            function formatDate(date) 
+            {
+              var day = date.getDate();
+              var month = date.getMonth() + 1;
+              var year = date.getFullYear();
+              return day + '/' + month + '/' + year;
+            }
+            
+            // Function to set the current date in the "date" input field
+            function setCurrentDate() 
+            {
+              var currentDate = new Date();
+              var formattedDate = formatDate(currentDate);
+              document.getElementById("today").value = formattedDate;
+              // Set focus on the name input field
+                document.getElementById("fname").focus();
+            }
+
+            // Function to handle the change event of the physician select element
+            function checkPhysicianSelection() 
+            {
+                var physicianSelect = document.getElementById("physician");
+                var otherInput = document.getElementById("other");
+
+                if (physicianSelect.value === "Other") 
+                {
+                    otherInput.value = ""; // Clear the "other" input field
+                    alert('Enter the name of physician')
+                    otherInput.focus(); // Set focus on the "other" input field
+                } 
+            }
+            
+            // Call the setCurrentDate function when the form is loaded
+            window.addEventListener('load', setCurrentDate);
+            </script>
+    </head>
+    <body>
+        <div class="header">
+            <img src="ex58/Logo.gif">
+            <h2>Noenatal Feeding Study</h2>
+        </div>
+        <form>
+            <table width="550" align="center" cellspacing="5">
+                <tr>
+                    <td colspan="3" align="right">
+                        <label>Today is:</label>
+                        <input type="text" id="today" name="today" size="6">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="fname">1) Name (first, last):</label>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="fname" name="fname" size="15">
+                        <input type="text" id="lname" name="lname" size="15">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="record">2) Medical Record #:</label>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="record" name="record" size="10">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="birthday">3) Date of birth:</label>
+                    </td>
+                    <td colspan="2">
+                        <input type="date" id="birthday" name="birthday">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="physician">4) Physician:</label>
+                    </td>
+                    <td colspan="2">
+                        <select id="physician" name="physician"
+                            onchange="checkPhysicianSelection()">
+                            <option value="Dr.Warren Albert">Dr. Warren Albert</option>
+                            <option value="Dr.Maria Alvarez">Dr. Maria Alvarez</option>
+                            <option value="Dr.Karen Brinkman">Dr.Karen Brinkman</option>
+                            <option value="Dr.Micheal Kerry">Dr.Micheal Kerry</option>
+                            <option value="Other">Other</option>
+                        </select>                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="other">&nbsp;&nbsp;&nbsp; If other (specify):</label>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="other" name="other" size="15">
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan="6">
+                        <label>
+                            5) 1 Minute APGAR Score:<br/>
+                            &nbsp;&nbsp;&nbsp; Each score must be 0, 1 or 2
+                        </label>
+                    </td>
+                    <td>
+                        <label for="activity">Activity</label>
+                    </td>
+                    <td align="right">
+                        <input type="number" id="activity" name="activity">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="pulse">Pulse</label>
+                    </td>
+                    <td align="right">
+                        <input type="number" id="pulse" name="pulse">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="grimace">Grimace (Reflect, Imitability)</label>
+                    </td>
+                    <td align="right">
+                        <input type="number" id="grimace" name="grimace">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="appearance">Appearance (Skin Color)</label>
+                    </td>
+                    <td align="right">
+                        <input type="number" id="appearance" name="appearance">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="respiration">Respiration</label>
+                    </td>
+                    <td align="right">
+                        <input type="number" id="respiration" name="respiration">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="total"><b>TOTAL</b></label>
+                    </td>
+                    <td align="right">
+                        <input type="text" id="total" name="total" size="1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="weight">
+                            6) Birth weight (gms):<br/>
+                            &nbsp;&nbsp;&nbsp; Weights must be >=120gms
+                        </label>
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="weight" name="weight" size="5">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="consent">7) Parental Consent (required):</label>
+                    </td>
+                    <td colspan="2">
+                        <input type="checkbox" id="consent" name="consent">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        <input type="reset" value="Reload Page">
+                    </td>
+                </tr>
+            </table>
+        </form>    
+    </body>
+</html>
