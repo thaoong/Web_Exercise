@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-app';
+
+  WelcomeMessage="Hey Guest!"
+  DataFromOtherComponent:any=null
+  MyValue=100
 }

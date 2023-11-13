@@ -1,0 +1,26 @@
+<p>third works!</p>
+<p class="MyStyle1">
+    UEL
+</p>
+<p class="{{style1}}" FIS></p>
+<p [class]="style1">ITB Club</p>
+
+<p class="{{complexstyle}}">
+    Students
+</p>
+<p class="{{complexstyle}} MyStyle4">
+    Lecturers
+</p>
+<table>
+    <tr>
+        <td>Your name:</td>
+        <td>
+            <input type="text" #myname>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button type="button" (click)="processClick(myname.value)"></button>
+        </td>
+    </tr>
+</table>

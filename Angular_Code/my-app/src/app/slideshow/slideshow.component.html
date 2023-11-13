@@ -1,0 +1,31 @@
+<p>slideshow works!</p>
+
+<button type="button" (click)="changeImage1()">Image 1</button>
+<button type="button" (click)="changeImage2()">Image 2</button>
+<br/>
+
+<div *ngIf="imageIndex==1; then view1; else view2">
+
+</div>
+<ng-template #view1>
+    <img src="assets/images/1.jpg">
+</ng-template>
+<ng-template #view2>
+    <img src="assets/images/2.jpg" width="600" height="500">
+</ng-template>
+
+<br/>
+<div [ngSwitch]="imageIndex">
+    <p *ngSwitchCase="1">
+        <img src="assets/images/1.jpg">
+    </p>
+    <p *ngSwitchCase="2">
+        <img src="assets/images/2.jpg" width="600" height="500">
+    </p>
+</div>
+
+<ul>
+    <li *ngFor="let fruit of fruits; index as stt">
+       {{(stt+1)}} - {{fruit}}
+    </li>
+</ul>

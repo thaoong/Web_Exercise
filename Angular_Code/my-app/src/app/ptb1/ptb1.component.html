@@ -1,0 +1,28 @@
+<p>ptb1 works!</p>
+<table border="1">
+    <tr>
+        <td colspan="2">Phuong trinh bac 1</td>
+    </tr>
+    <tr>
+        <td>He so a:</td>
+        <td>
+            <input type="text" [(ngModel)]="hesoa">
+        </td>
+    </tr>
+    <tr>
+        <td>He so b:</td>
+        <td>
+            <input type="text" [(ngModel)]="hesob">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="text-align: center;">
+            <button type="button" (click)="xulyGiai()">Giai</button>
+            <button type="reset">Lam lai</button>
+        </td>
+    </tr>
+    <tr>
+        <td>Ket qua:</td>
+        <td>{{ketqua}}</td>
+    </tr>
+</table>

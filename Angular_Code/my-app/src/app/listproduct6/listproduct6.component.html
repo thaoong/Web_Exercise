@@ -1,0 +1,19 @@
+<p>listproduct6 works!</p>
+From Unit Price: <input type="number" #min>
+To Unit Price: <input type="number" #max>
+<button type="button" (click)="searchProduct(min.value, max.value)">Search</button>
+<table>
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Unit Price</th>
+    </tr>
+    <tbody *ngFor="let p of filterProducts">
+        <tr>
+            <td>{{p.ProductId}}</td>
+            <td>{{p.ProductName}}</td>
+            <td>{{p.UnitPrice}}</td>
+
+        </tr>
+    </tbody>
+</table>
