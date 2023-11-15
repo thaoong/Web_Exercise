@@ -24,7 +24,10 @@ import { Listproduct5Component } from './listproduct5/listproduct5.component';
 import { Listproduct6Component } from './listproduct6/listproduct6.component';
 import { Listproduct7Component } from './listproduct7/listproduct7.component';
 
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { Exercise88Component } from './exercise88/exercise88.component';
+import { ServiceProductImageEventComponent } from './service-product-image-event/service-product-image-event.component';
+import { ServiceProductImageEventDetailComponent } from './service-product-image-event-detail/service-product-image-event-detail.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +50,9 @@ import {HttpClientModule} from '@angular/common/http'
     Listproduct5Component,
     Listproduct6Component,
     Listproduct7Component,
+    Exercise88Component,
+    ServiceProductImageEventComponent,
+    ServiceProductImageEventDetailComponent,
   ],
   imports: [
     BrowserModule,
