@@ -31,7 +31,8 @@ import { AboutComponent } from './about/about.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { TopmenuComponent } from './topmenu/topmenu.component';
 import { LeftmenuComponent } from './leftmenu/leftmenu.component';
-import { LogibComponent } from './logib/logib.component'
+import { LogibComponent } from './logib/logib.component';
+import { ChitietsanphamComponent } from './chitietsanpham/chitietsanpham.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,8 @@ import { LogibComponent } from './logib/logib.component'
     PagenotfoundComponent,
     TopmenuComponent,
     LeftmenuComponent,
-    LogibComponent
+    LogibComponent,
+    ChitietsanphamComponent
   ],
   imports: [
     BrowserModule,

@@ -14,5 +14,8 @@ export class ListproductComponent {
               "UnitPrice":17},
               {"ProductId":"p3",
               "ProductName":"sprite",
-              "UnitPrice":19}]
+              "UnitPrice":19},
+              {"ProductId":"p4",
+              "ProductName":"aqua",
+              "UnitPrice":8}]
 }
