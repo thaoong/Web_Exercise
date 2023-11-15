@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, RoutingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ThirdComponent } from './third/third.component';
 import { FourComponent } from './four/four.component';
@@ -25,9 +25,13 @@ import { Listproduct6Component } from './listproduct6/listproduct6.component';
 import { Listproduct7Component } from './listproduct7/listproduct7.component';
 
 import {HttpClientModule} from '@angular/common/http';
-import { Exercise88Component } from './exercise88/exercise88.component';
 import { ServiceProductImageEventComponent } from './service-product-image-event/service-product-image-event.component';
-import { ServiceProductImageEventDetailComponent } from './service-product-image-event-detail/service-product-image-event-detail.component'
+import { ServiceProductImageEventDetailComponent } from './service-product-image-event-detail/service-product-image-event-detail.component';
+import { AboutComponent } from './about/about.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { TopmenuComponent } from './topmenu/topmenu.component';
+import { LeftmenuComponent } from './leftmenu/leftmenu.component';
+import { LogibComponent } from './logib/logib.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,9 +54,14 @@ import { ServiceProductImageEventDetailComponent } from './service-product-image
     Listproduct5Component,
     Listproduct6Component,
     Listproduct7Component,
-    Exercise88Component,
     ServiceProductImageEventComponent,
     ServiceProductImageEventDetailComponent,
+    RoutingComponent,
+    AboutComponent,
+    PagenotfoundComponent,
+    TopmenuComponent,
+    LeftmenuComponent,
+    LogibComponent
   ],
   imports: [
     BrowserModule,

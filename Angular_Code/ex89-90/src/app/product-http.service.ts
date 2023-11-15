@@ -1,6 +1,6 @@
-import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
+import { HttpClient, HttpClientJsonpModule, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, retry, throwError } from 'rxjs';
 import { IProduct } from './product';
 
 @Injectable({
@@ -9,7 +9,18 @@ import { IProduct } from './product';
 export class ProductHttpService {
   private _url:string="./assets/data/products.json";
   constructor(private _http: HttpClient) { }
+
   getProducts():Observable<IProduct[]>{ 
   return this._http.get<IProduct[]>(this._url)
-}
+  }
+  getProductsHandleError(){
+  return this._http.get<IProduct[]>(this._url)
+  .pipe(retry(3),
+  catchError(this.handleError))
+  }
+  handleError(error:HttpErrorResponse){
+  return throwError(()=>new Error(error.message))
+  }
+
+
 }
