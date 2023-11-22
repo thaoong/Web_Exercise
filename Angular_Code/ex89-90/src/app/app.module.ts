@@ -11,6 +11,9 @@ import { Exercise91Component } from './exercise91/exercise91.component';
 import { Exercise92Component } from './exercise92/exercise92.component';
 import { Exercise93Component } from './exercise93/exercise93.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { Exercise100Component } from './exercise100/exercise100.component';
+import { FakeProducttComponent } from './fake-productt/fake-productt.component';
+import { BitcoinPriceIndexComponent } from './bitcoin-price-index/bitcoin-price-index.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     Exercise92Component,
     Exercise93Component,
     RoutingComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    Exercise100Component,
+    FakeProducttComponent,
+    BitcoinPriceIndexComponent
   ],
   imports: [
     HttpClientModule,

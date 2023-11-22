@@ -9,6 +9,8 @@ import { LogibComponent } from './logib/logib.component';
 import { ServiceProductImageEventComponent } from './service-product-image-event/service-product-image-event.component';
 import { ServiceProductImageEventDetailComponent } from './service-product-image-event-detail/service-product-image-event-detail.component';
 import { ChitietsanphamComponent } from './chitietsanpham/chitietsanpham.component';
+import { Customer } from './customer';
+import { CustomerComponent } from './customer/customer.component';
 
 const routes: Routes = [
   {path:"", redirectTo:"/gioithieu", pathMatch:"full"},
@@ -21,6 +23,7 @@ const routes: Routes = [
   {path:"dangnhap", component:LogibComponent},
   {path:'service-product-image-event', component:ServiceProductImageEventComponent},
   {path:'service-product-image-event/:id', component:ServiceProductImageEventDetailComponent},
+  {path:"customer", component:CustomerComponent},
   {path:"**", component:PagenotfoundComponent}
 ];
 

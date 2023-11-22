@@ -32,7 +32,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { TopmenuComponent } from './topmenu/topmenu.component';
 import { LeftmenuComponent } from './leftmenu/leftmenu.component';
 import { LogibComponent } from './logib/logib.component';
-import { ChitietsanphamComponent } from './chitietsanpham/chitietsanpham.component'
+import { ChitietsanphamComponent } from './chitietsanpham/chitietsanpham.component';
+import { CustomerComponent } from './customer/customer.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { ChitietsanphamComponent } from './chitietsanpham/chitietsanpham.compone
     TopmenuComponent,
     LeftmenuComponent,
     LogibComponent,
-    ChitietsanphamComponent
+    ChitietsanphamComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,

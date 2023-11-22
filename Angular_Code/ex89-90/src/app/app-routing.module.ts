@@ -6,7 +6,7 @@ import { Exercise93Component } from './exercise93/exercise93.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
-  {path:"", redirectTo:"product", pathMatch:"full"},
+  //{path:"", redirectTo:"product", pathMatch:"full"},
   {path:'product',component:Exercise86Component},
   {path:'list-product',component:Ex89Component},
   {path:'customer',component:Exercise93Component},

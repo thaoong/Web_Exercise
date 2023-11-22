@@ -1,0 +1,41 @@
+<h1 class="text-center text-white bg-dark p-3">{{bitcoin.chartName}}</h1>
+<div align="center">
+    Updated at: {{bitcoin.time.updated}} <br>
+    UpdatedISO: {{bitcoin.time.updatedISO}} <br>
+    Updateduk: {{bitcoin.time.updateduk}} <br>
+    {{bitcoin.disclaimer}}
+</div>
+<table class="table table -hover">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Symbol</th>
+            <th>Rate</th>
+            <th>Description</th>
+            <th>Rate float</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="USD">
+            <td>{{bitcoin.bpi.USD.code}}</td>
+            <td>{{bitcoin.bpi.USD.symbol}}</td>
+            <td>{{bitcoin.bpi.USD.rate}}</td>
+            <td>{{bitcoin.bpi.USD.description}}</td>
+            <td>{{bitcoin.bpi.USD.rate_float}}</td>
+        </tr>
+        <tr class="GBP">
+            <td>{{bitcoin.bpi.GBP.code}}</td>
+            <td>{{bitcoin.bpi.GBP.symbol}}</td>
+            <td>{{bitcoin.bpi.GBP.rate}}</td>
+            <td>{{bitcoin.bpi.GBP.description}}</td>
+            <td>{{bitcoin.bpi.GBP.rate_float}}</td>
+        </tr> <tr class="EUR">
+            <td>{{bitcoin.bpi.EUR.code}}</td>
+            <td>{{bitcoin.bpi.EUR.symbol}}</td>
+            <td>{{bitcoin.bpi.EUR.rate}}</td>
+            <td>{{bitcoin.bpi.EUR.description}}</td>
+            <td>{{bitcoin.bpi.EUR.rate_float}}</td>
+        </tr>
+    </tbody>
+</table>
+
