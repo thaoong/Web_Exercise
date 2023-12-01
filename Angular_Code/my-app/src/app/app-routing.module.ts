@@ -13,7 +13,7 @@ import { Customer } from './customer';
 import { CustomerComponent } from './customer/customer.component';
 
 const routes: Routes = [
-  {path:"", redirectTo:"/gioithieu", pathMatch:"full"},
+  //{path:"", redirectTo:"/gioithieu", pathMatch:"full"},
   //{path:"", redirectTo:"/service-product-image-event", pathMatch:"full"},
   {path:"pt1", component:Ptb1Component},
   {path:"slide", component:SlideshowComponent},

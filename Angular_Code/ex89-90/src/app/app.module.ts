@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule, RoutingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Ex89Component } from './ex89/ex89.component';
@@ -14,7 +14,12 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { Exercise100Component } from './exercise100/exercise100.component';
 import { FakeProducttComponent } from './fake-productt/fake-productt.component';
 import { BitcoinPriceIndexComponent } from './bitcoin-price-index/bitcoin-price-index.component';
-
+import { BooksComponent } from './books/books.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookNewComponent } from './book-new/book-new.component';
+import { FormsModule } from '@angular/forms';
+import { BookUpdateComponent } from './book-update/book-update.component';
+import { BookDeleteComponent } from './book-delete/book-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,12 +34,18 @@ import { BitcoinPriceIndexComponent } from './bitcoin-price-index/bitcoin-price-
     PagenotfoundComponent,
     Exercise100Component,
     FakeProducttComponent,
-    BitcoinPriceIndexComponent
+    BitcoinPriceIndexComponent,
+    BooksComponent,
+    BookDetailComponent,
+    BookNewComponent,
+    BookUpdateComponent,
+    BookDeleteComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
