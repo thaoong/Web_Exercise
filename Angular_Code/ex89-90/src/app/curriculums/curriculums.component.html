@@ -1,0 +1,34 @@
+{{errMessage}}
+<h3>QUẢN LÝ THÔNG TIN SÁCH</h3>
+<a routerLink="">Create New</a>
+<table border="1">
+    <tr align="center">
+        <th>Tensach</th>
+        <th>Giaban</th>
+        <th>Mota</th>
+        <th>Anhbia</th>
+        <th>Ngaycapnhat</th>
+        <th>Soluongton</th>
+        <th>MaCD</th>
+        <th>MaNXB</th>
+        <th></th>
+    </tr>
+    <tbody>
+        <tr *ngFor="let curriculum of curriculums">
+            <td>{{curriculum.Tensach}}</td>
+            <td>{{curriculum.Giaban}}</td>
+            <td>{{curriculum.Mota}}</td>
+            <td><img src="assets/curriculum_images/{{curriculum.Anhbia}}" width="100px"height="150px">
+            </td>
+            <td>{{curriculum.Ngaycapnhat}}</td>
+            <td>{{curriculum.Soluongton}}</td>
+            <td>{{curriculum.MaCD}}</td>
+            <td>{{curriculum.MaNXB}}</td>
+            <td>
+                <a routerLink="#">Edit</a> |
+                <a routerLink="">Details</a> |
+                <a routerLink="">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

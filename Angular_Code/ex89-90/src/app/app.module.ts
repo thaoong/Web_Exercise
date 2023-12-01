@@ -20,6 +20,8 @@ import { BookNewComponent } from './book-new/book-new.component';
 import { FormsModule } from '@angular/forms';
 import { BookUpdateComponent } from './book-update/book-update.component';
 import { BookDeleteComponent } from './book-delete/book-delete.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
+import { CurriculumsComponent } from './curriculums/curriculums.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,9 @@ import { BookDeleteComponent } from './book-delete/book-delete.component';
     BookDetailComponent,
     BookNewComponent,
     BookUpdateComponent,
-    BookDeleteComponent
+    BookDeleteComponent,
+    FileUploadComponent,
+    CurriculumsComponent
   ],
   imports: [
     HttpClientModule,
