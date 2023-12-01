@@ -1,8 +1,8 @@
 {{errMessage}}
 <h3>QUẢN LÝ THÔNG TIN SÁCH</h3>
-<a routerLink="">Create New</a>
-<table border="1">
-    <tr align="center">
+<a routerLink="/curriculum-new">Create New</a>
+<table class="table table -hover">
+    <tr>
         <th>Tensach</th>
         <th>Giaban</th>
         <th>Mota</th>
@@ -25,10 +25,11 @@
             <td>{{curriculum.MaCD}}</td>
             <td>{{curriculum.MaNXB}}</td>
             <td>
-                <a routerLink="#">Edit</a> |
-                <a routerLink="">Details</a> |
-                <a routerLink="">Delete</a>
+                <a routerLink="/curriculum-update/{{curriculum.Id}}">Edit</a> |
+                <a routerLink="/curriculum-detail/{{curriculum.Id}}">Details</a> |
+                <button style="margin-top:5px" (click)="deleteCurriculum(curriculum.Id)">Delete</button>
             </td>
         </tr>
     </tbody>
-</table>
+</table>    
+<router-outlet></router-outlet>

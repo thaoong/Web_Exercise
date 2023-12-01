@@ -106,3 +106,30 @@ app.get("/curriculums/:id",cors(),(req,res)=>{
     let p=curriculum.find(x=>x.Id==id)
     res.send(p) 
 })        
+app.post("/curriculums",cors(),(req,res)=>{ 
+    //put json book into database
+    curriculum.push(req.body);
+    //send message to client(send all database to client)
+    res.send(curriculum)
+    })
+app.put("/curriculums",cors(),(req,res)=>{
+    book=curriculum.find(x=>x.Id==req.body.Id)
+    if(book!=null)
+    {
+        book.Tensach=req.body.Tensach
+        book.Giaban=req.body.Giaban
+        book.Mota=req.body.Mota
+        book.Anhbia=req.body.Anhbia
+        book.Ngaycapnhat=req.body.Ngaycapnhat
+        book.Soluongton=req.body.Soluongton
+        book.MaCD=req.body.MaCD
+        book.MaNXB=req.body.MaNXB
+
+    }
+    res.send(curriculum)
+    })
+app.delete("/curriculums/:id",cors(),(req,res)=>{
+    id=req.params["id"]
+    curriculum = curriculum.filter(x => x.Id !== id);
+    res.send(curriculum) 
+    })
