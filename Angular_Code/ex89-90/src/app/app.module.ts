@@ -25,6 +25,11 @@ import { CurriculumsComponent } from './curriculums/curriculums.component';
 import { CurriculumNewComponent } from './curriculum-new/curriculum-new.component';
 import { CurriculumDetailComponent } from './curriculum-detail/curriculum-detail.component';
 import { CurriculumUpdateComponent } from './curriculum-update/curriculum-update.component';
+import { FashionComponent } from './fashion/fashion.component';
+import { FashionDetailComponent } from './fashion-detail/fashion-detail.component';
+import { FashionNewComponent } from './fashion-new/fashion-new.component';
+import { FashionUpdateComponent } from './fashion-update/fashion-update.component';
+import { FashionDeleteComponent } from './fashion-delete/fashion-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +54,12 @@ import { CurriculumUpdateComponent } from './curriculum-update/curriculum-update
     CurriculumsComponent,
     CurriculumNewComponent,
     CurriculumDetailComponent,
-    CurriculumUpdateComponent
+    CurriculumUpdateComponent,
+    FashionComponent,
+    FashionDetailComponent,
+    FashionNewComponent,
+    FashionUpdateComponent,
+    FashionDeleteComponent
   ],
   imports: [
     HttpClientModule,

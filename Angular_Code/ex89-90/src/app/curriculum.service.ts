@@ -38,10 +38,10 @@ export class CurriculumService {
   }
   postCurriculum(aCurriculum:any):Observable<any>
   {
-  const headers=new HttpHeaders().set("Content-Type","application/json;charset=utf-8")
-  const requestOptions:Object={
-      headers:headers,
-      responseType:"text"
+    const headers=new HttpHeaders().set("Content-Type","application/json;charset=utf-8")
+    const requestOptions:Object={
+        headers:headers,
+        responseType:"text"
     }
     return this._http.post<any>("/curriculums",JSON.stringify(aCurriculum),requestOptions).pipe(
       map(res=>JSON.parse(res) as Array<ICurriculum>),

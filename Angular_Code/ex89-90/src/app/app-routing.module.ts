@@ -10,7 +10,7 @@ import { CurriculumNewComponent } from './curriculum-new/curriculum-new.componen
 import { CurriculumUpdateComponent } from './curriculum-update/curriculum-update.component';
 const routes: Routes = [
   //{path:"", redirectTo:"product", pathMatch:"full"},
-  { path:"", redirectTo:"curriculum", pathMatch:"full"},
+  //{ path:"", redirectTo:"curriculum", pathMatch:"full"},
   { path:'curriculum', component:CurriculumsComponent},
   { path:'curriculum-detail/:id', component:CurriculumDetailComponent},
   { path:'curriculum-update/:id', component:CurriculumUpdateComponent},

@@ -124,7 +124,6 @@ app.put("/curriculums",cors(),(req,res)=>{
         book.Soluongton=req.body.Soluongton
         book.MaCD=req.body.MaCD
         book.MaNXB=req.body.MaNXB
-
     }
     res.send(curriculum)
     })

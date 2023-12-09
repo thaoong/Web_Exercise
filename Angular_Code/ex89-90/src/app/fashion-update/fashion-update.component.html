@@ -1,0 +1,44 @@
+<p>{{errMessage}}</p>
+<table>
+    <tr>
+        <td>Fashion Id:</td>
+        <td>
+            <input type="text" class="form-control" #name="ngModel" name="FashionId" id="FashionId"
+                placeholder="Enter Fashion Id" [(ngModel)]="fashion._id" />
+        </td>
+    </tr>
+    <tr>
+        <td>Fashion Style:</td>
+        <td>
+            <input type="text" class="form-control" #name="ngModel" name="FashionStyle" id="FashionStyle"
+                placeholder="Enter Fashion Style" [(ngModel)]="fashion.style" />
+        </td>
+    </tr>
+    <tr>
+        <td>Fashion Subject:</td>
+        <td>
+            <input type="text" class="form-control" #name="ngModel" name="FashionSubject" id="FashionSubject"
+                placeholder="Enter Fashion Subject" [(ngModel)]="fashion.fashion_subject" />
+        </td>
+    </tr>
+    <tr>
+        <td>Fashion Detail:</td>
+        <td>
+            <input type="text" class="form-control" #name="ngModel" name="FashionDetail" id="FashionDetail"
+                placeholder="Enter Fashion Detail" [(ngModel)]="fashion.fashion_detail" />
+        </td>
+    </tr>
+    <tr>
+        <td>Fashion Image:</td>
+        <td>
+            <input type="file" class="file-input" #name="ngModel" name="fashion_image" id="fashion_image"
+                [(ngModel)]="fashion.fashion_image" (change)="onFileSelected($event,fashion)">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <button (click)="putFashion()">Update</button>
+        </td>
+    </tr>
+</table>
+<app-fashion></app-fashion>
