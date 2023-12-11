@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "admin-fashion": {
+    "client-fashion": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/admin-fashion",
+            "outputPath": "dist/client-fashion",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -28,10 +28,10 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [
+              "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            ]              
           },
           "configurations": {
             "production": {
@@ -63,16 +63,16 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "admin-fashion:build",
+            "browserTarget": "client-fashion:build",
             "proxyConfig": "src/proxy.conf.json",
-            "port":4001
-            },
+            "port": 4002
+            },            
           "configurations": {
             "production": {
-              "browserTarget": "admin-fashion:build:production"
+              "browserTarget": "client-fashion:build:production"
             },
             "development": {
-              "browserTarget": "admin-fashion:build:development"
+              "browserTarget": "client-fashion:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "admin-fashion:build"
+            "browserTarget": "client-fashion:build"
           }
         },
         "test": {
@@ -105,6 +105,6 @@
     }
   },
   "cli": {
-    "analytics": "005e36c4-cfd0-465e-9785-df08cf9c5739"
+    "analytics": "c6bd3aaf-5b7a-4b3a-a6c6-247fe1ebacfb"
   }
 }

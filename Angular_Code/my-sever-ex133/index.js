@@ -32,13 +32,28 @@ fashionCollection = database.collection("Fashion_Ex133");
 
 app.get("/fashions", cors(), async (req, res) => {
     const result = await fashionCollection.find({}).toArray();
-    res.send(result)
-})
+    result.sort((a, b) => {
+      const dateA = new Date(a.creationDate);
+      const dateB = new Date(b.creationDate);
+      return dateB - dateA;
+    });
+    res.send(result);
+  });
 
 app.get("/fashions/:id", cors(), async (req, res) => {
     var o_id = new ObjectId(req.params["id"]);
     const result = await fashionCollection.find({ _id: o_id }).toArray();
     res.send(result[0])
+})
+
+app.get("/fashions/style/:style", cors(), async (req, res) => {
+    try {
+        const result = await fashionCollection.find({ style: { $regex: new RegExp(req.params["style"], "i") } }).toArray();
+        res.send(result)
+    }
+    catch (err) {
+        res.send(err)
+    }
 })
 
 app.post("/fashions", cors(), async (req, res) => {
@@ -57,7 +72,8 @@ app.put("/fashions", cors(), async (req, res) => {
                 style: req.body.style,
                 fashion_subject: req.body.fashion_subject,
                 fashion_detail: req.body.fashion_detail,
-                fashion_image: req.body.fashion_image
+                fashion_image: req.body.fashion_image,
+                creationDate: req.body.creationDate
             }
         }
     )

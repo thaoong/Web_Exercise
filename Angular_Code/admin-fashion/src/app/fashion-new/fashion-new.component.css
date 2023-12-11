@@ -1,0 +1,11 @@
+.container bg-light p-3{
+    display: flex;
+}
+label{
+    padding:7px;
+    font-weight: bold;
+    font-size: 14pt;
+}
+input, textarea{
+    padding:7px;
+}
